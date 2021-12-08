@@ -3,7 +3,9 @@
   "version": "0.2.0",
   "description": "LoveIt theme source file",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "hugo-extended": "^0.80.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
@@ -29,9 +31,11 @@
   "resolutions": {
     "minimist": "^1.2.5"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run build && npm run copy && git add resources assets/js"
+  "//": {
+    "husky": {
+      "hooks": {
+        "pre-commit": "npm run build && npm run copy && git add resources assets/js"
+      }
     }
   },
   "repository": {
