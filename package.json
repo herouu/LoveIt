@@ -20,10 +20,11 @@
   "scripts": {
     "preinstall": "npx npm-force-resolutions",
     "babel": "npx babel src/js --out-file assets/js/theme.min.js --source-maps",
-    "build": "npx hugo --source=exampleSite",
+    "build": "npm run babel && npx hugo -v --source=exampleSite --themesDir ../.. --gc",
+    "build-coding": "npm run babel && npx hugo -v --source=exampleSite --themesDir=../.. --theme=workspace --destination=../dist --gc",
     "build-lunr-segmentit": "browserify src/lib/lunr.segmentit.js -o assets/lib/lunr/lunr.segmentit.js -t babelify --presets @babel/preset-env --presets minify",
-    "start": "npx hugo server --source=exampleSite -D --disableFastRender",
-    "start-production": "npm run babel && hugo server --source=exampleSite --themesDir ../.. -D --disableFastRender -e production",
+    "start": "npm run babel && npx hugo server --source=exampleSite --themesDir ../.. -D --disableFastRender",
+    "start-production": "npm run babel && npx hugo server --source=exampleSite --themesDir ../.. -D --disableFastRender -e production",
     "check": "htmlproofer exampleSite/public --check-html --allow-hash-href --empty-alt-ignore --disable-external",
     "copy": "rm -rf resources && cp -rf exampleSite/resources resources"
   },
