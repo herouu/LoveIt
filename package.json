@@ -12,7 +12,7 @@
     "babelify": "^10.0.0",
     "browserify": "^16.5.0",
     "core-js": "^3.6.4",
-    "hugo-extended": "^0.80.0",
+    "hugo-extended": "^0.69.0",
     "husky": "^4.2.3",
     "minimist": "^1.2.5",
     "segmentit": "^2.0.3"
@@ -31,11 +31,9 @@
   "resolutions": {
     "minimist": "^1.2.5"
   },
-  "//": {
-    "husky": {
-      "hooks": {
-        "pre-commit": "npm run build && npm run copy && git add resources assets/js"
-      }
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build && npm run copy && git add resources assets/js"
     }
   },
   "repository": {
